@@ -11,4 +11,8 @@ public class ExceptionHandler {
     public ResponseEntity<Object> handleException(DuplicateEmailException exception) {
         return ResponseUtil.returnResponse(exception);
     }
+    @org.springframework.web.bind.annotation.ExceptionHandler(RuntimeException.class)
+    public ResponseEntity<Object> handleException(RuntimeException exception) {
+        return ResponseUtil.returnResponse(exception);
+    }
 }
