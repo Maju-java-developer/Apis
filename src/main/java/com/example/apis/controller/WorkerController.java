@@ -1,5 +1,6 @@
 package com.example.apis.controller;
 
+import com.example.apis.entities.ServiceEntity;
 import com.example.apis.entities.WorkerEntity;
 import com.example.apis.service.WorkerService;
 import lombok.AllArgsConstructor;
@@ -20,6 +21,11 @@ public class WorkerController {
     @PostMapping("getAllWorkers")
     public List<WorkerEntity> getAllWorkers() {
         return workerService.getAllWorkers();
+    }
+
+    @PostMapping("findAllByServiceId")
+    public List<WorkerEntity> getAllWorkers(@RequestBody ServiceEntity service) {
+        return workerService.findAllByServiceId(service.getServiceId());
     }
 
     @PostMapping("createWorker")

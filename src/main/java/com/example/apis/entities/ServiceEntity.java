@@ -21,4 +21,7 @@ public class ServiceEntity {
     private String serviceUrl;
     @JsonIgnore
     private LocalDateTime createdDate;
+
+//    @OneToMany(mappedBy = "service", fetch = FetchType.EAGER)
+//    List<WorkerEntity> workers;
 }

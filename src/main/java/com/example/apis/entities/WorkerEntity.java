@@ -38,6 +38,7 @@ public class WorkerEntity {
     @JsonIgnore
     private LocalDateTime createdDate;
 
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "SERVICE_ID", nullable = false)
     private ServiceEntity service;

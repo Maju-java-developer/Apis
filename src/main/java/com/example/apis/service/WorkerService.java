@@ -19,6 +19,13 @@ public class WorkerService {
         return workerRepository.findAll();
     }
 
+    public List<WorkerEntity> findAllByServiceId(Integer serviceId) {
+        if (serviceId == null) {
+            throw new RuntimeException("ServiceId is required!");
+        }
+        return workerRepository.findAllByServiceServiceId(serviceId);
+    }
+
     public WorkerEntity createWorker(WorkerEntity worker) {
         // Check if a worker with the same email already exists
         if (workerRepository.existsByEmail(worker.getEmail())) {
